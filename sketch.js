@@ -1,4 +1,4 @@
-var president,presidentImg,buildings,buildingImg,soldierAmt=0;
+var president,presidentImg,buildings,buildingImg,soldierAmt=10;
 var buildingGroup1,buildingGroup2,buildingGroup3,buildingGroup4
 var time =1;
 var gameState=1;
@@ -149,9 +149,9 @@ if (gameState==2) {
   time=time+1;
   
     if(time>520){
-      soldierAmt=soldierAmt-[5/{shieldAmt + 5}];
-      helicopterAmt=helicopterAmt-[5/{shieldAmt + 5}];
-      tankAmt=tankAmt-[5/{shieldAmt+5}];
+      soldierAmt=soldierAmt-[5/shieldAmt+5];
+      helicopterAmt=helicopterAmt-[5/shieldAmt+5];
+      tankAmt=tankAmt-[5/shieldAmt+5];
       aliens=aliens-(soldierAmt/100);
       aliens=aliens-(tankAmt/50);
       aliens=aliens-(helicopterAmt/25);
@@ -175,6 +175,8 @@ if (gameState==2) {
   text("YOU WIN PLAY AGAIN BY PRESSING CTRL+R",100,300);
 
  }
+ console.log(gameState);
+ console.log(soldierAmt);
 
 drawSprites()
 }
